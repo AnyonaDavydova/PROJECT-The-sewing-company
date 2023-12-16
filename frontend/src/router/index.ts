@@ -6,6 +6,14 @@ import author from '../views/Author.vue'
 import MainPage from '../views/MainPage.vue'
 import Contacts from '../views/Contacts.vue'
 import Constructor from '../views/Constructor.vue'
+//authorization - страница выбора авторизации
+//sign-up - регистрация
+//log-in - вход
+//main-page - станица о нас
+//gallery - страница с галереей
+//home-view - первая страница
+//contacts - контакты - визитка
+//constructor - конструктор изделия
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/authorization',

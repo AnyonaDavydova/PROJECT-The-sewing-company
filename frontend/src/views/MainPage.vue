@@ -31,7 +31,7 @@ font-weight: bolder;
 
 .BoxMain {
 color: #ffffff;
-background: url("../assets/back.jpg");
+background: url("../assets/designSite/back.jpg");
 width: 60%;
 box-shadow: 0 5px 10px #030a28;
 margin: 5vh auto;

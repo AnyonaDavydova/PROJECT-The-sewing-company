@@ -1,29 +1,30 @@
 <template>
     <div class="authorize-page">
-            <h2>Sign up</h2>
+            <h2>Регистрация</h2>
             <form @submit.prevent="submitForm">
               <div class="user-box">
-                <label>Username</label>
+                <label>Почта</label>
                 <input class="input" type="username" name="username" v-model="username"> <br><br>
               </div>
               <div class="user-box">
-                <label>Password</label>
+                <label>Пароль</label>
                 <input class="input" type="password" name="password" v-model="password">
               </div>
-                <button type="submit" id = "signup">Sign up</button>
+
+              <div class="user-box">
+                <label id = "labelOpt" for="role-select">Кто вы?</label>
+                <select name="roles" id="role-select">
+                  <option value="">Please choose an option</option>
+                  <option value="zakaz">Заказчик</option>
+                  <option value="mened">Менеджер</option>
+                  <option value="dir">Дирекция</option>
+                  <option value="klad">Кладовщик</option>
+                </select>
+              </div>
+                <button type="submit" id = "signup">Создать аккаунт</button>
             </form>
 
-      <label id = "labelOpt" for="role-select">Кто вы?</label>
 
-      <select name="pets" id="role-select">
-        <option value="">--Please choose an option--</option>
-        <option value="dog">Dog</option>
-        <option value="cat">Cat</option>
-        <option value="hamster">Hamster</option>
-        <option value="parrot">Parrot</option>
-        <option value="spider">Spider</option>
-        <option value="goldfish">Goldfish</option>
-      </select>
     </div>
 </template>
 
@@ -61,29 +62,36 @@ export default{
 </script>
 
 <style>
-option{}
 #labelOpt{
-  margin: 3%;
+  margin-top: 2vh;
 }
 #role-select{
-  margin-bottom: 3%;
+  margin-bottom: 0;
+  width: 100%;
+  padding: 5px;
+  border-radius: 10px;
+  color: rgb(219, 166, 172);
+  font-family: Andale Mono, monospace;
+  font-weight: bold;
 }
 .authorize-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(66, 88, 212);
-  height: 50vh;
+  background-color: rgb(220, 167, 173);
+  height: 60vh;
   width: 70%;
   margin: 10vh auto;
   border-radius: 20px;
+  padding: 10px;
 }
 
 h2 {
   text-align: center;
-  margin-bottom: 2vh;
+  margin-bottom: 3vh;
   color: #ffffff;
+  font-weight: bolder;
 }
 
 form {
@@ -93,6 +101,7 @@ form {
 }
 
 .user-box{
+  margin: 0 0;
   display: grid;
   justify-content: center;
 }
@@ -117,7 +126,8 @@ label {
   padding: 10px 20px;
   border: none;
   background-color: #ffffff;
-  color: #4258d3;
+  color: #dca7ad;
+  font-weight: bold;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.2s;
@@ -125,9 +135,4 @@ label {
   font-family: Andale Mono, monospace;
 }
 
-#signup:hover {
-  background-color: #4258d3;
-  color: white;
-  box-shadow: 0 0 20px white;
-}
 </style>

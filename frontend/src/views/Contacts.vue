@@ -1,9 +1,8 @@
 <template>
   <div class="BoxCon">
-    <img id = "logoComp" src="../assets/logo.png" alt="Company Logo"/>
-    <h4>Швейная фабрика</h4>
-    <p><a href="https://360.yandex.ru/mail/">SomeSewingCompany@gmail.com</a></p>
+    <img id = "logoComp" src="../assets/designSite/logo-03.jpg" alt="Company Logo"/>
     <p>+7900-000-00-00</p>
+    <p><a href="https://vk.com/utroclothes">Связаться с нами в VK</a></p>
   </div>
   <a :href="mapLink" target="_blank" id = "map">Показать на карте</a>
 
@@ -13,47 +12,43 @@
 export default {
     computed: {
       mapLink() {
-        return 'https://maps.google.com/?q=' + encodeURI('Швейная компания ДВФУ');
+        return 'https://maps.google.com/?q=' + encodeURI('Швейная компания утро');
       },
     }
 }
 </script>
 <style>
 #map{
-  background-color: white;
+  background-color: #fdfdfd;
   padding: 10px 10% 10px 10%;
   border-radius: 20px;
-  color: #4258d3;
+  color: #5c5e5f;
 }
 .BoxCon{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(242, 244, 246);
   height: 40vh;
   width: 80%;
   margin: 10vh auto;
   border-radius: 20px;
-  border: 50px solid #f2f4f6;
-  box-shadow: 0 0 0 10px #4258d4 inset;
+  border: 50px solid white;
+  background: white;
+  box-shadow: 0 0 0 10px #dca7ad inset;
   box-sizing: border-box;
-  color: #4258d4;
 }
 #logoComp{
-  height: 10vh;
+  height: 12vh;
 }
 p{
-  color: #4258d4;
+  color: #5c5e5f;
   font-size: medium;
   font-weight: normal;
   margin: 0;
   padding: 2px;
 }
-h4{
-  color: #4258d4;
-  font-size: 30px;
-  margin:0;
-  font-weight: bolder;
+a{
+  color: #5c5e5f;
 }
 </style>

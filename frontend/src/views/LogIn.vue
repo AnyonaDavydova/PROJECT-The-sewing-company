@@ -1,16 +1,16 @@
 <template>
     <div class="authorize-page">
-            <h2>Log in</h2>
+            <h2>Вход</h2>
             <form @submit.prevent="submitForm">
               <div class="user-box">
-                <label>Username:</label>
+                <label>Почта</label>
                 <input class="input" type="username" name="username" v-model="username"> <br><br>
               </div>
               <div class="user-box">
-                <label>Password:</label>
+                <label>Пароль</label>
                 <input class="input" type="password" name="password" v-model="password"> <br><br>
               </div>
-                <button type="submit" id = "login">Log in</button>
+                <button type="submit" id = "login">Войти</button>
             </form>
     </div>
 </template>
@@ -68,17 +68,13 @@ export default{
   padding: 10px 20px;
   border: none;
   background-color: #ffffff;
-  color: #4258d3;
+  color: #dba6ac;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.3s;
   border-radius: 20px;
   font-family: Andale Mono, monospace;
+  font-weight: bolder;
 }
 
-#login:hover {
-  background-color: #4258d3;
-  color: white;
-  box-shadow: 0 0 20px white;
-}
 </style>
