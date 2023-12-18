@@ -7,7 +7,7 @@
 
         <button type="button" class="offCanvasButton" v-if="!isOpen" @click="isOpen=true">
             <img
-                src="@/assets/icons/offcanvas_button.svg"
+                src="@/assets/iconDESIGN/vkIcon.png"
                 alt="Меню"
             >
         </button>

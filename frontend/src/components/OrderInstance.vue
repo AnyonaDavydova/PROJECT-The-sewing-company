@@ -1,8 +1,8 @@
 <template>
     <div class="Order" @click="push_to_id">
-        <img v-if="wait" class="Order__img" src="@/assets/icons/waiting_status.svg">
-        <img v-if="reject" class="Order__img" src="@/assets/icons/reject_status.svg">
-        <img v-if="complete" class="Order__img" src="@/assets/icons/complete_status.svg">
+        <img v-if="wait" class="Order__img" src="@/assets/iconSTATUS/waiting_status.png">
+        <img v-if="reject" class="Order__img" src="@/assets/iconSTATUS/reject_status.png">
+        <img v-if="complete" class="Order__img" src="@/assets/iconSTATUS/complete_status.png">
         <table class="Order__table">
             <thead>
                 <tr>
