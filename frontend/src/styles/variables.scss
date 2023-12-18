@@ -1,0 +1,15 @@
+$header-background-color: rgba(0, 0, 0, 0.46);
+$green: #B5D5CA;
+$dark-green: darken($green, 20%);
+$light-blue: #fcd1d1;
+$dim-white: #ffffff;
+$primary-color: rgb(255, 255, 255);
+$secondary-color: #a6d79f;
+$hover-secondary-color: darken($secondary-color, 5%);
+$active-secondary-color: darken($secondary-color, 20%);
+$primary-font-color: #ffffff;
+$secondary-font-color: gray;
+
+@function toRem($size) {
+    @return $size / 16px * 1rem;
+}

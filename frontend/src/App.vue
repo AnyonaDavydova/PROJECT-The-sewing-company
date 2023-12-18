@@ -1,77 +1,93 @@
 <template>
-  <nav id = "mainLink">
-    <router-link to="/main-page">О нас</router-link>
-    <router-link to="/authorization">Авторизация</router-link>
-    <router-link to = "/gallery">Галерея</router-link>
-    <router-link to="/contacts">Контакты</router-link>
-  </nav>
-  <router-view/>
-
+    <Header/>
+    <div class="ExternalLayout">
+        <div class="InnerLayout">
+            <router-view></router-view>
+        </div>
+    </div>
 </template>
 
 <script>
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
+import {useStore} from 'vuex'
 
-
-import axios from 'axios';
-
- export default{
-  name:'App',
-  beforeCreate(){
-    this.$store.commit('initializeStore')
-
-    const access = this.$store.state.access
-
-    if(access){
-      axios.defaults.headers.common['Authorization'] = "JWT "+ access
-    }else{
-      axios.defaults.headers.common['Authorization'] = ''
+export default {
+    setup() {
+        const store = useStore()
+        return {
+            profile: store.state.profile
+        }
+    },
+    components: {
+        Header,
+        Footer,
     }
-  }
- }
-
+}
 </script>
 
-<style>
+<style lang="scss">
+@import "@/styles/media.scss";
+@import "@/styles/variables.scss";
 
 #app {
-  font-family: Andale Mono, monospace;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-#mainLink{
-  grid-template-columns: 180px 180px 180px 180px;
+.ExternalLayout {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-nav {
-  margin-top: -4vh;
-  padding: 10px;
-  display: grid;
-  justify-content: center;
-  align-items: center;
+.InnerLayout {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: $primary-color;
+    width: 65vw;
+
+    @include vw-lg-down {
+        width: 85vw;
+    }
+
+    @include vw-md-down {
+        width: 100vw;
+    }
 }
 
-nav a {
-  font-weight: bold;
-  color: #ffffff;
-  background: #dea8ae;
-  font-size: large;
-  text-decoration: none;
-  border-radius: 10px;
-  padding: 10px;
-  margin-left: 1rem;
-  transition: transform .3s;
-  box-shadow: 0 5px 1px #816363;
-}
-nav a:hover{
-  transform: scale(1.05);
-
+.MainLayout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
-nav a.router-link-exact-active {
-  color: #dc9292;
-  background: white;
+.Button {
+    background-color: $secondary-color;
+    color: $primary-color;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 30px 10px;
+    font-size: toRem(20px);
+    transition: background-color 0.25s ease-in-out;
+
+    &:hover {
+        background-color: $hover-secondary-color;
+    }
+    &:active, &:focus {
+        background-color: $active-secondary-color;
+    }
+}
+
+h1, h2 {
+    text-align: center;
 }
 </style>
