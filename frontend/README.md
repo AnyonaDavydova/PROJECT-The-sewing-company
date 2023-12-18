@@ -1,19 +1,22 @@
-# sewing-factory
+Для работы с проектом вам необзодимо следующее:
 
-## Project setup
+1.
 ```
 npm install
 ```
+2.
+```
+npm install sass-loader sass webpack --save-dev
+```
 
-### Compiles and hot-reloads for development
+3.
 ```
 npm run serve
 ```
+or
 
-### Compiles and minifies for production
 ```
 npm run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
