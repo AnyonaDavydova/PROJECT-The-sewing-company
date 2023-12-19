@@ -1,7 +1,7 @@
 <template>
     <div class="Card">
         <div class="Used">
-            <eva-input v-model="article" @change="changed" placeholder="Ариткул"/>
+            <eva-input v-model="article" @change="changed" placeholder="Артикул"/>
         </div>
        Количество: <eva-input @change="changed" v-model="count" placeholder="Длина"/>
         <br>

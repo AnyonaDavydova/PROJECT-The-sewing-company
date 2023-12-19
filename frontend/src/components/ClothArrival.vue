@@ -1,7 +1,7 @@
 <template>
     <div class="Card">
         <div class="Used">
-            <eva-input v-model="article" @change="changed" placeholder="Ариткул"/>
+            <eva-input v-model="article" @change="changed" placeholder="Артикул"/>
             <p>Список рулонов</p>
         </div>
         <template v-for="(i, index) in rolls">
