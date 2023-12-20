@@ -33,7 +33,7 @@ export default createStore({
                     resolve()
                 }).catch((err) => {
                     console.log(err)
-                    reject()
+                    console.log()
                 })
             })
         },
@@ -50,7 +50,7 @@ export default createStore({
                     commit("setProfile", response.data)
                     resolve(response.data);
                 }).catch((err) => {
-                    reject(err)
+                    console.log(err)
                 })
             })
         },
@@ -65,7 +65,7 @@ export default createStore({
                     .then((response) => {
                         resolve(response.data)
                     }).catch((err) => {
-                    reject(err)
+                    console.log(err)
                 })
             })
         },
@@ -80,7 +80,7 @@ export default createStore({
                     .then((response) => {
                         resolve(response.data)
                     }).catch((err) => {
-                    reject(err)
+                    console.log(err)
                 })
             })
         },
@@ -95,7 +95,7 @@ export default createStore({
                     .then((response) => {
                         resolve(response.data)
                     }).catch((err) => {
-                    reject(err)
+                    console.log(err)
                 })
             })
         },
@@ -110,7 +110,7 @@ export default createStore({
                     .then((response) => {
                         resolve(response.data)
                     }).catch((err) => {
-                    reject(err)
+                    console.log(err)
                 })
             })
         },
@@ -140,10 +140,10 @@ export default createStore({
                                 resolve(data)
                                 console.log("data2: ", data)
                             }).catch((err) => {
-                            reject(err)
+                            console.log(err)
                         })
                     }).catch((err) => {
-                        reject(err)
+                        console.log(err)
                     })
 
 
@@ -161,7 +161,7 @@ export default createStore({
                     .then((response) => {
                         resolve()
                     }).catch((err) => {
-                    reject(err)
+                    console.log(err)
                 })
             })
         },
@@ -177,7 +177,7 @@ export default createStore({
                     .then((response) => {
                         resolve()
                     }).catch((err) => {
-                    reject(err)
+                    console.log(err)
                 })
             })
         },
@@ -192,7 +192,7 @@ export default createStore({
                     .then((response) => {
                         resolve(response.data)
                     }).catch((err) => {
-                    reject(err)
+                    console.log(err)
                 })
             })
         },
@@ -208,7 +208,7 @@ export default createStore({
                         resolve(response.data)
                     })
                     .catch((err) => {
-                        reject(err)
+                        console.log(err)
                     })
             })
         },
@@ -226,7 +226,7 @@ export default createStore({
                 ).then((response) => {
                     resolve()
                 }).catch(err => {
-                    reject(err)
+                    console.log(err)
                 })
             })
         },
@@ -242,7 +242,7 @@ export default createStore({
                         resolve(response.data)
                     })
                     .catch((err) => {
-                        reject(err)
+                        console.log(err)
                     })
             })
         },
@@ -258,7 +258,7 @@ export default createStore({
                         resolve(response.data)
                     })
                     .catch((err) => {
-                        reject(err)
+                        console.log(err)
                     })
             })
         },
@@ -275,7 +275,7 @@ export default createStore({
                 .then((data) => {
                     resolve(data.data)
                 }).catch((err) => {
-                    reject(err)
+                    console.log(err)
                 })
             })
         },
@@ -292,7 +292,7 @@ export default createStore({
                 .then((data) => {
                     resolve(data.data)
                 }).catch((err) => {
-                    reject(err)
+                    console.log(err)
                 })
             })
         },
@@ -308,7 +308,7 @@ export default createStore({
                         resolve(response.data)
                     })
                     .catch((err) => {
-                        reject(err)
+                        console.log(err)
                     })
             })
         },
@@ -324,7 +324,7 @@ export default createStore({
                             resolve(response.data)
                         })
                         .catch((err) => {
-                            reject(err)
+                            console.log(err)
                         })
                 })
         },
@@ -341,7 +341,7 @@ export default createStore({
                         resolve(response.data)
                     })
                     .catch((err) => {
-                        reject(err)
+                        console.log(err)
                     })
             })
         },
@@ -358,7 +358,7 @@ export default createStore({
                         resolve(response.data)
                     })
                     .catch((err) => {
-                        reject(err)
+                        console.log(err)
                     })
             })
         },
