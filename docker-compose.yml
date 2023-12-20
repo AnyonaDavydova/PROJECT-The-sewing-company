@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  postgresql:
+    image: postgres:latest
+    env_file:
+      - .env
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  backend:
+    build: ../PROJECT-The-sewing-company/backend
+    env_file:
+      - .env
+    volumes:
+      - static:/code/static
+    ports:
+      - "9000:9000"
+
+networks:
+  default:
+    external:
+      name: scoobydoo
+
+volumes:
+  db_data:
+  static:
