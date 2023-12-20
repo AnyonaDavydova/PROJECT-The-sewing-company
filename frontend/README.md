@@ -4,12 +4,18 @@
 ```
 npm install
 ```
+
 2.
+```
+npm install -g @vue/cli
+```
+
+3.
 ```
 npm install sass-loader sass webpack --save-dev
 ```
 
-3.
+4.
 ```
 npm run serve
 ```
