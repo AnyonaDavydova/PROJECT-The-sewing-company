@@ -5,6 +5,8 @@ services:
     image: postgres:latest
     env_file:
       - .env
+    networks:
+      - network
     volumes:
       - db_data:/var/lib/postgresql/data
     ports:
@@ -14,15 +16,19 @@ services:
     build: ../PROJECT-The-sewing-company/backend
     env_file:
       - .env
+    networks:
+      - network
     volumes:
       - static:/code/static
+      - "./backend:/code"
+
     ports:
       - "9000:9000"
+    depends_on:
+      - postgresql
 
 networks:
-  default:
-    external:
-      name: scoobydoo
+  network:
 
 volumes:
   db_data:

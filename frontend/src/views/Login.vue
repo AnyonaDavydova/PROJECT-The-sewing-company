@@ -4,14 +4,27 @@
             <h1 class="Login_title">Вход</h1>
 
             <div class="Login_form form__group field">
-                <eva-input class="form__field" placeholder="Логин" name="login" id='login' required v-model="login"/>
+                <eva-input class="form__field"
+                           placeholder="Логин"
+                           name="login"
+                           id='login'
+                           required
+                           v-model="login"/>
             </div>
 
             <div class="form__group field">
-                <eva-input type="password" class="form__field" placeholder="Пароль" name="pass" id='pass' required v-model="password"/>
+                <eva-input type="password"
+                           class="form__field"
+                           placeholder="Пароль"
+                           name="pass"
+                           id='pass'
+                           required
+                           v-model="password"/>
             </div>
 
             <button class="Login_button Button" type="button" @click="onLogin">Войти</button>
+               <a href="/registration/" id="reg_link">Ещё не зарегистрированы?</a>
+<!--            < class="Login_button Button" type="button" @click="onLogin">Войти</>-->
         </div>
     </div>
 </template>
