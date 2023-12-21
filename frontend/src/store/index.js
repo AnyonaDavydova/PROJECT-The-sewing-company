@@ -3,12 +3,12 @@ import {createStore} from 'vuex';
 import axios from 'axios';
 import createPersistedState from "vuex-persistedstate";
 
-const baseURL = "https://sewing.mrfox131.software/api/v1/"
+const baseURL = "http://localhost:9000/api/v1/"
 
 export default createStore({
     state: {
         token: '',
-        baseStaticURL: "https://sewing.mrfox131.software/",
+        baseStaticURL: "http://localhost:9000/",
         profile: {}
     },
     mutations: {
@@ -21,6 +21,21 @@ export default createStore({
         }
     },
     actions: {
+
+        registration({commit, dispatch}, payload) {
+            return new Promise((resolve, reject) => {
+                axios.post(baseURL + "register/",
+                    payload
+                ).then((response) => {
+                    console.log("Registration successfull")
+                    console.log(response)
+                    // dispatch("getProfile")
+                    resolve()
+                }).catch((err) => {
+                    console.log(err)
+                })
+            })
+        },
         login({commit, dispatch}, payload) {
             return new Promise((resolve, reject) => {
                 axios.post(baseURL + "plane_login/",

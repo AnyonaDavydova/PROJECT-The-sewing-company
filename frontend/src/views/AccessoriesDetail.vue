@@ -1,5 +1,5 @@
 <template>
-    <div class="MainLayout">
+    <div v-if="!is_loading" class="MainLayout">
         <div class="ItemDetails">
             <img class="ItemDetails__img" :src="baseStaticURL+data.accessory.image" alt="">
             <table class="ItemDetails__table">
@@ -35,6 +35,7 @@
             </div>
         </div>
     </div>
+    <div v-else>Загрузка ...</div>
 </template>
 
 <script>
@@ -50,10 +51,11 @@ export default {
         const data = ref({})
         const count = ref(null)
         const router = useRoute()
-
+        const is_loading = ref(true)
         store.dispatch("getAccessoryDetails", router.params.id).then((data_) => {
-            console.log(data_)
-            data.value = data_
+            console.log(data_);
+            data.value = data_;
+            is_loading.value = false;
         })
 
         const onDecommision = () => {
@@ -78,7 +80,8 @@ export default {
             count,
             onDecommision,
             onDecommisionInKg,
-            baseStaticURL: store.state.baseStaticURL
+            baseStaticURL: store.state.baseStaticURL,
+            is_loading
         }
     }
 }

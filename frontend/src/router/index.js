@@ -14,6 +14,7 @@ import AddAccessory from "../views/AddAccessory";
 import AddMaterial from "../views/AddMaterial";
 import AddProduct from "../views/AddProduct";
 import MaterialsArrival from "../views/MaterialsArrival";
+import Registration from "@/views/Registration.vue";
 
 const routes = [
     {
@@ -25,6 +26,11 @@ const routes = [
         path: '/log-in',
         name: 'Login',
         component: Login
+    },
+    {
+        path: '/registration',
+        name: 'Registration',
+        component: Registration
     },
     {
         path: '/nomenclature/products',
