@@ -50,6 +50,7 @@
 <script>
 import { useStore } from 'vuex';
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 export default {
     name: "AddAccessory",
@@ -65,7 +66,8 @@ export default {
         const error = ref(false)
         const success = ref(false)
         const kg = ref(false)
-        // const update = ref(false)
+        const update = ref(false)
+        const router = useRouter()
 
         let onSubmit = e => {
             e.preventDefault();
@@ -79,7 +81,8 @@ export default {
             formData.append('width', width.value)
             formData.append('kg_acceptable', kg.value)
             formData.append('image', document.getElementById('photo').files[0])
-            // formData.append('update', update.value)
+            formData.append('update', update.value)
+            router.push("/nomenclature/accessories");
             store.dispatch("createNewAccessory", formData)
             .then((data) => {
                 error.value = false
@@ -102,7 +105,7 @@ export default {
             error,
             success,
             kg,
-            // update
+            update
         }
     }
 }

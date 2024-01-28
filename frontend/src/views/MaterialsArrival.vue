@@ -15,7 +15,7 @@
     <button class="Button" @click="createAccessory">Добавить фурнитуру</button><button class="Button" @click="deleteAccessory">-</button>
     <br><br><br><br>
     <button class="Button" @click="finishHim">Создать накладную и учесть товар</button>
-    <a v-if="link !== null" target="_blank" :href="'https://sewing.mrfox131.software/'+link">Ссылка на накладную</a>
+    <a v-if="link !== null" target="_blank" :href="'http://localhost:9000/'+link">Ссылка на накладную</a>
 
 </div>
 </template>

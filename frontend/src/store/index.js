@@ -277,6 +277,23 @@ export default createStore({
                     })
             })
         },
+        createNewProduct({state}, payload) {
+            return new Promise((resolve, reject) => {
+                axios.post(
+                    baseURL + "product",
+                    payload,
+                    {
+                        headers: {
+                            "Authorization": "Bearer " + state.token
+                        }
+                    })
+                .then((data) => {
+                    resolve(data.data)
+                }).catch((err) => {
+                    console.log(err)
+                })
+            })
+        },
         createNewAccessory({state}, payload) {
             return new Promise((resolve, reject) => {
                 axios.post(

@@ -307,7 +307,7 @@ async def goods_arrival(
     layout: PageLayout = SingleColumnLayout(page)
     layout.add(
         Paragraph(
-            "от «___» __________________ 2022г.",
+            "от «___» __________________ 20__г.",
             font=font,
             horizontal_alignment=Alignment.RIGHT,
         )

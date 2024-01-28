@@ -2,7 +2,7 @@
     <div class="MainLayout">
         <h2>Список выпускаемой продукции</h2>
         <ProductInstance
-            activeRole="products"
+            activeRole="product"
             v-for="card of cards"
             v-bind:key="card.article"
             v-bind:card="card"
@@ -12,8 +12,8 @@
 
 <script>
 import ProductInstance from "@/components/ProductInstance.vue"
-import { ref } from "vue";
-import { useStore } from "vuex";
+import { useStore } from 'vuex';
+import { ref } from 'vue';
 
 export default {
     name: 'Products',

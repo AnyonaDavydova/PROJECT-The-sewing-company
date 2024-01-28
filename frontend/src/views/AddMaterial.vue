@@ -46,6 +46,7 @@
 <script>
 import { useStore } from 'vuex';
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 export default {
     name: "AddMaterial",
@@ -57,12 +58,11 @@ export default {
         const width = ref(null)
         const print = ref('')
         const color = ref('')
-
-        
+        const router = useRouter()
         const store = useStore()
         const error = ref(false)
         const success = ref(false)
-        // const update = ref(false)
+        const update = ref(false)
 
         let onSubmit = e => {
             e.preventDefault();
@@ -75,7 +75,8 @@ export default {
             formData.append('article', article.value)
             formData.append('width', width.value)
             formData.append('image', document.getElementById('photo').files[0])
-            // formData.append('update', update.value)
+            formData.append('update', update.value)
+            router.push("/nomenclature/materials");
             store.dispatch("createNewMaterial", formData)
             .then((data) => {
                 error.value = false
@@ -87,7 +88,6 @@ export default {
         }
 
         return {
-            onSubmit,
             name,
             price,
             composition,
@@ -97,7 +97,8 @@ export default {
             article,
             error,
             success,
-            // update
+            update,
+            onSubmit
         }
     }
 }

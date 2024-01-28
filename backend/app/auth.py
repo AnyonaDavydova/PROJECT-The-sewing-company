@@ -186,7 +186,7 @@ async def get_roles():
             "description": "profile info",
             "content": {
                 "application/json": {
-                    "example": {"login": "mrfox131", "name": "Max", "role": 5}
+                    "example": {"login": "user", "name": "Bob", "role": 5}
                 }
             },
         }

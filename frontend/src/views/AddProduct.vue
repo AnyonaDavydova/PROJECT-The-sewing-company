@@ -55,6 +55,7 @@
 <script>
 import {useStore} from 'vuex';
 import {ref} from 'vue';
+import { useRouter } from 'vue-router';
 
 export default {
   name: "AddProduct",
@@ -70,7 +71,8 @@ export default {
     const error = ref(false)
     const success = ref(false)
     const kg = ref(false)
-    // const update = ref(false)
+    const update = ref(false)
+    const router = useRouter()
 
     let onSubmit = e => {
       e.preventDefault();
@@ -85,8 +87,9 @@ export default {
       formData.append('length', length.value)
       formData.append('kg_acceptable', kg.value)
       formData.append('image', document.getElementById('photo').files[0])
-      // formData.append('update', update.value)
-      store.dispatch("createNewAccessory", formData)
+      formData.append('update', update.value)
+      router.push("/nomenclature/products");
+      store.dispatch("createNewProduct", formData)
           .then((data) => {
             error.value = false
             success.value = true
@@ -108,7 +111,7 @@ export default {
       error,
       success,
       kg,
-      // update
+      update
     }
   }
 }

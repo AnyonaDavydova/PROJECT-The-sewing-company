@@ -27,7 +27,7 @@
         </table>
         <h3>Карты раскроя для заказа</h3>
         <template v-for="mapping in mappings">
-            <a target="_blank" :href="'https://sewing.mrfox131.software/'+mapping.map">{{ mapping.article }}: {{mapping.batch_number}}</a>
+            <a target="_blank" :href="'http://localhost:9000/'+mapping.map">{{ mapping.article }}: {{mapping.batch_number}}</a>
         </template>
     </div>
 </template>
