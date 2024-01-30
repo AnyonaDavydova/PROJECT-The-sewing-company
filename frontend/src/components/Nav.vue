@@ -9,10 +9,10 @@
                 Ассортимент
             </a>
             <div class="Nav__droplinks">
-                <router-link to="/nomenclature/products">Вся продукция</router-link>
+<!--                <router-link to="/nomenclature/products">Вся продукция</router-link>-->
                 <router-link to="/nomenclature/materials">Материалы</router-link>
                 <router-link to="/nomenclature/accessories">Фурнитура</router-link>
-                <router-link to="/add/product">Добавить продукт</router-link>
+<!--                <router-link to="/add/product">Добавить продукт</router-link>-->
                 <router-link to="/add/material">Добавить материал</router-link>
                 <router-link to="/add/accessory">Добавить фурнитуру</router-link>
                 <router-link to="/add/materials_arrival">Учет материалов</router-link>
@@ -20,9 +20,9 @@
             </div>
         </div>
 
-        <router-link class="Nav__link" to="/orders">
-            Заказы
-        </router-link>
+  <!--        <router-link class="Nav__link" to="/orders">-->
+  <!--            Заказы-->
+  <!--        </router-link>-->
 
         <router-link class="Nav__link" to="/log-in">
         Авторизация

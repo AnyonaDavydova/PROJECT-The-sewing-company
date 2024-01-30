@@ -28,16 +28,11 @@ async def add_new_product(
     update: bool = Form(...),
     article: int = Form(...),
     name: str = Form(...),
-    price: float = Form(...),
-    width: int = Form(...),
     length: int = Form(...),
-    comment: str = Form(...),
+    width: int = Form(...),
+    print: Optional[str] = Form(...),
+    price: float = Form(...),
     image: UploadFile = File(...),
-    cloth_pieces: List[schemas.PiecesDescription] = Depends(
-        schemas.PiecesDescription.from_json
-    ),
-    accessory_articles: str = Form(...),
-    size: int = Form(...),
     user: models.User = Depends(manager),
     db: Session = Depends(get_db),
 ):
@@ -59,9 +54,7 @@ async def add_new_product(
     new_product.width = width
     image_filename = await utils.save_file(image)
     new_product.image = image_filename
-    new_product.comment = comment
     new_product.price = price
-    new_product.size = size
     db.add(new_product)
     db.flush()
     db.refresh(new_product)
@@ -72,7 +65,6 @@ async def add_new_product(
                 models.Product.current_active == True,
                 models.Product.article == article,
                 models.Product.id != new_product.id,
-                models.Product.size == size,
             )
             .one_or_none()
         )
@@ -100,31 +92,7 @@ async def add_new_product(
     #         )
     #     )
 
-    accessory_articles = json.loads(
-        accessory_articles if accessory_articles != "" else "[]"
-    )
 
-    for accessory in accessory_articles:
-        new_product.accessories.append(
-            db.query(models.Accessory).filter(models.Accessory.article == accessory).one()
-        )
-
-    for cloth_object in cloth_pieces:
-        cloth: models.Cloth = (
-            db.query(models.Cloth)
-            .filter(models.Cloth.article == cloth_object.article)
-            .one()
-        )
-        if cloth not in new_product.clothes:
-            new_product.clothes.append(cloth)
-        new_piece: models.ClothPiece = models.ClothPiece()
-        new_piece.width = cloth_object.width
-        new_piece.length = cloth_object.length
-        new_piece.cloth_article = cloth.article
-        new_piece.product_id = new_product.id
-        new_piece.count = cloth_object.count
-
-        db.add(new_piece)
 
     db.commit()
     db.flush()
@@ -141,11 +109,7 @@ async def add_new_product(
     tags=["products"],
 )
 async def get_products(db: Session = Depends(get_db)):
-    return (
-        db.query(models.ProductWithPreviousAccessoryCloth)
-        .filter(models.ProductWithPreviousAccessoryCloth.current_active == True)
-        .all()
-    )
+    return db.query(models.Cloth).all()
 
 
 @app.get(

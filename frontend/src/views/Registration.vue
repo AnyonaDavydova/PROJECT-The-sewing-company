@@ -1,22 +1,25 @@
 <template>
   <div class="Registration">
     <div class="Login_layout">
-      <h1 class="Login_title">Вход</h1>
+      <h1 class="Login_title">Регистрация</h1>
 
       <div class="Login_form form__group field">
+        <eva-input
+            type="text"
+            class="form__field"
+            placeholder="Логин"
+            name="login"
+            id='login'
+            required
+            v-model="login"/>
         <eva-input class="form__field"
-                   placeholder="Логин"
-                   name="login"
-                   id='login'
-                   required
-                   v-model="login"/>
+            type="text"
+            placeholder="Иванов Иван"
+            name="name"
+            id='name'
+            required
+            v-model="full_name"/>
       </div>
-              <eva-input class="form__field"
-                   placeholder="Иванов Иван"
-                   name="name"
-                   id='name'
-                   required
-                   v-model="full_name"/>
       <div class="form__group field">
         <eva-input type="password"
                    class="form__field"
@@ -25,7 +28,7 @@
                    id='pass'
                    required
                    v-model="password"/>
-        <eva-input type="password_2"
+        <eva-input type="password"
                    class="form__field"
                    placeholder="Введите пароль ещё раз"
                    name="pass2"
@@ -90,7 +93,7 @@ export default {
   align-self: center;
   width: 30vw;
 
-  &_layout {
+  .Login_layout {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -98,12 +101,12 @@ export default {
     font-size: 1.5rem;
   }
 
-  &_button {
+  .Button {
     min-width: 100%;
     margin-top: 35px;
   }
 
-  &_form {
+  .form__field {
     margin-top: 10px;
     margin-bottom: 30px;
   }

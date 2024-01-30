@@ -3,7 +3,7 @@
         <div class="Used">
             <eva-input v-model="article" @change="changed" placeholder="Артикул"/>
         </div>
-       Количество: <eva-input @change="changed" v-model="count" placeholder="Длина"/>
+       Количество: <eva-input @change="changed" v-model="count" placeholder="Штук"/>
         <br>
     </div>
 </template>

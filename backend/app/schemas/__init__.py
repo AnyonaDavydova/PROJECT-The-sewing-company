@@ -113,12 +113,9 @@ class Product(BaseModel):
     name: str
     width: int
     length: int
+    print: Optional[str]
     image: Optional[str]
-    comment: Optional[str]
     price: float
-    size: int
-    clothes: Optional[List[Cloth]]
-    accessories: Optional[List[Accessory]]
     changed_date: Optional[datetime.datetime]
     previous: Optional["Product"]
 
